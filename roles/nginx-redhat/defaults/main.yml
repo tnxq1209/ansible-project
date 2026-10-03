@@ -1,0 +1,9 @@
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for roles/nginx
+
+nginx_package: nginx
+nginx_service: nginx
+
+nginx_port: 80
+server_name: redhat-1

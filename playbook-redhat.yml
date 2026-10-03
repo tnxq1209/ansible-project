@@ -1,0 +1,7 @@
+- name: Install common packages
+  hosts:
+    - redhat
+  become: true
+
+  roles:
+    - nginx-redhat

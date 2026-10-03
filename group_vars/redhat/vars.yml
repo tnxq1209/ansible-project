@@ -1,0 +1,11 @@
+package: 
+  - nginx
+  - curl
+  - htop
+  - docker  
+  - docker-compose
+    
+web_service: nginx
+
+nginx_port: 80
+server_name: redhat

@@ -1,0 +1,2 @@
+# host_vars/ubuntu-2.yml
+db_password: SecretForRedHat1

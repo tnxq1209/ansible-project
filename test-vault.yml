@@ -1,0 +1,7 @@
+- name: Test vault
+  hosts: debian 
+
+  tasks:
+    - name: Show database password
+      debug: 
+        msg: "database user password is {{ db_password }}"

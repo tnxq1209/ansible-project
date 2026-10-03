@@ -1,0 +1,30 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/nginx
+- name: Installing Nginx... 
+  ansible.builtin.apt: 
+    name: "{{ nginx_package }}"
+    state: present 
+    update_cache: true
+  tags:
+    - nginx
+    - install
+
+- name: Ensure nginx service is running!
+  ansible.builtin.service:
+    name: "{{ nginx_service }}"
+    state: started 
+    enabled: true
+  tags:
+    - always
+    - nginx
+    - service
+
+- name: Deploying Nginx configuration... 
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/default 
+  notify: Restart Nginx
+  tags:
+    - nginx
+    - config

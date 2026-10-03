@@ -1,0 +1,7 @@
+- name: Install common packages
+  hosts: 
+    - debian
+  become: true
+
+  roles:
+    - nginx-debian
